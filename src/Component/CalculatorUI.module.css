@@ -1,0 +1,10 @@
+.CalcUI {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-flow: column;
+    width: 30%;
+    margin: auto;
+}

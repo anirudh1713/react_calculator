@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import classes from './App.module.css';
+import CalculatorUI from './Component/CalculatorUI';
+import * as math from 'mathjs';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+    state = {
+        input: "",
+        ans: "",
+        ansFlag: false
+    };
+
+    onClearHandler = () => {
+        this.setState({input: "", ans: "", ansFlag: false});
+    }
+
+    onAddToInputHandler = (e) => {
+        let updatedInput = this.state.input;
+        updatedInput += e.target.value;
+        this.setState({input: updatedInput, ansFlag: false});
+    }
+
+    onAnsHandler = () => {
+        const ans = math.evaluate(this.state.input);
+        this.setState({input: ans, ans: ans, ansFlag: true});
+    }
+
+    render() {
+        return (
+            <div className={classes.App}>
+                <h1>Calculator</h1>
+                <CalculatorUI
+                    ans={this.state.ans}
+                    ansFlag={this.state.ansFlag}
+                    crrInput={this.state.input}
+                    onAns={this.onAnsHandler}
+                    addToInput={this.onAddToInputHandler}
+                    onClear={this.onClearHandler}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;

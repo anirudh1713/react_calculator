@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+h1{
+  font-size: 45px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#f77f00, #fcbf49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

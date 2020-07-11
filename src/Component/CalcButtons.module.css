@@ -1,0 +1,18 @@
+.CalcButtons {
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+button {
+    margin: 10px;
+    padding: 20px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #fca311;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btnNumbers {
+    background-color: #14213d;
+    color: white;
+}
